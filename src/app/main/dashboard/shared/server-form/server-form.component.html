@@ -1,1 +1,38 @@
-<p>server-form works!</p>
+<!-- [(ngModel)]="serverName" two way data binding -->
+
+
+<div class="card">
+  <h5 class="card-header">Register Server</h5>
+  <div class="card-body">
+    <!-- <h5 class="card-title">Server Data</h5> -->
+    <form>
+      <div class="form-group">
+        <label for="serverName">Server Name</label>
+        <input type="text" 
+          name="serNameInputField" 
+          class="form-control" 
+          id="serverName" 
+          aria-describedby="serverNameHelp" 
+          placeholder="Enter Server Name"
+          (input)="onUpdateServerName($event)"
+        >
+        <small id="serverNameHelp" class="form-text text-muted"> {{serverName}}</small>
+      </div>
+      <div class="form-group" style="margin-top: 10px;">
+        <label for="ipAdress">IP Adress</label>
+        <input type="text" class="form-control" id="ipAdress" placeholder="Ip Adress">
+      </div>
+     
+      <button type="submit" class="btn btn-primary" style="margin-top: 10px;" [disabled]="allowDisplay" (click)="incrementServerCount()">Submit</button>
+    </form>
+
+    <div >
+      <p *ngIf="numberOfServers > 0; else noServer">You added {{numberOfServers}} to Network.</p>
+      <ng-template #noServer>
+        <p>
+          Currently there are 0 server.
+        </p>
+      </ng-template>
+    </div>
+  </div>
+</div>

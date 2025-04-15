@@ -7,6 +7,8 @@ import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { ServerFormComponent } from './main/dashboard/shared/server-form/server-form.component';
 import { ServerListComponent } from './main/dashboard/shared/server-list/server-list.component';
 import { NavbarComponent } from './main/dashboard/shared/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+import { ServerComponent } from './main/dashboard/shared/server-list/server/server.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { NavbarComponent } from './main/dashboard/shared/navbar/navbar.component
     DashboardComponent,
     ServerFormComponent,
     ServerListComponent,
-    NavbarComponent
+    NavbarComponent,
+    ServerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

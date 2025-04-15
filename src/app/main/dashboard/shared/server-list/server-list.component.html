@@ -1,1 +1,22 @@
-<p>server-list works!</p>
+<app-server *ngFor="let server of serverList"></app-server>
+
+<!-- <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Server name</th>
+      <th scope="col">IP Adress</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let server of serverList" 
+    [ngStyle]="{'background-color' : getStatus(server)}"
+    >
+      <td>{{server.name}}</td>
+      <td>{{server.ipAdress}}</td>
+      <td>{{server.status}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="findOffline()"> There is One server Offline</p> -->
